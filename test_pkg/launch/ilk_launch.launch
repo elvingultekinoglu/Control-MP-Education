@@ -1,6 +1,0 @@
-<launch> 
-
-    <param name="/numara" type="double" value="3.0"/> 
-    <node name="ilk_deneme_node" pkg="test_pkg" type="basic_node"/> 
-
-</launch> 
