@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<sdf version="1.5">
+  <model name="QR_Code">
+    <link name="link">
+      <pose>0 0 0.182466 0 0 0</pose>
+      <inertial>
+        <mass>5.0</mass>
+        <inertia>
+          <ixx>1.76375</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.76375</iyy>
+          <iyz>0</iyz>
+          <izz>3.32</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <mesh>
+            <uri>model://test/meshes/qr_code.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+            <uri>model://test/meshes/qr_code.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
