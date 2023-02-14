@@ -1,0 +1,16 @@
+RASPBERRY PI BAĞLANTISI
+1. Gerekli yazılımları/paketleri yükle: Ubuntu 20.04 Server, ROS Noetic Bare Bones, Mavros 
+2. Gerekirse QGroundControl'da tüm parametreleri görmek için güncelleme yap. 
+3. RPi ile Pixhawk bağlantısı Telem aracılığıyla yapılacaksa:
+	- SERIAL2_PROTOCOL = 1
+	- SERIAL2_BAUD = 57 
+4. Access link'e erişmek için termianlde dev directory'sine git. "cd /dev"
+5. Mevcut bağlantıları görmek için "ls". 
+6. İlgili bağlantıyı bul. Örnek: ttyACM0 port'u. 
+7. Terminale: "sudo chmod 666 /dev/ttyACM0" yaz. Bunu dev dışında bir directory'de yap. 
+8. ROS ve Mavros'u başlatmak için: roslaunch mavros px4.launch fcu_url:=/dev/ttyACM0:57600 yaz. Burada px4.launch yerine apm2.launch da yazılabilir. 
+9. Alternatif olarak default bağlantı port'u yukarıdakine çekilerek sadece roslaunch mavros apm.launch ile de çalıştırılabilir. Bunun için: 
+	- roscd mavros
+	- cd launch 
+	- sudo nano apm.launch
+	- fcu_url olan line'ı bul ve karşısındaki default kısmını isteğe göre düzenle. 
